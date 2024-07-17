@@ -5,12 +5,17 @@ import pandas as pd
 
 def run():
   '''
+  #ESTO ES LO MISMO DE ABAJO
+  
+  data = read_csv.read_csv('data.csv')    #SI NO USAMOS PANDAS, se importa read_csv() del modulo que creamos
   data = list(filter(lambda item : item['Continent'] == 'South America',data))
+  
   countries = list(map(lambda x: x['Country'], data))
   percentages = list(map(lambda x: x['World Population Percentage'], data))
+  charts.generate_pie_chart(countries, percentages)
   '''
 
-  df = pd.read_csv('data.csv')
+  df = pd.read_csv('./curso-python-pip/app/data.csv')
   df = df[df['Continent'] == 'Africa']
 
   countries = df['Country'].values
